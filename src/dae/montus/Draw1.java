@@ -1,5 +1,6 @@
 package dae.montus;
 
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
@@ -51,8 +52,10 @@ class GCanvas extends Canvas // create a canvas for your graphics
             rainbow = new Rainbow(500, 500, 10);
         }
         if (nyanCat == null) {
-            nyanCat = new NyanCat(200, 200, rainbow);
+            nyanCat = new NyanCat(400, 250, rainbow);
         }
+        nyanCat.centerX = getWidth() / 2;
+        nyanCat.centerY = (int) ((getHeight() * 0.8f) / 2);
         Graphics2D g2D = (Graphics2D) g; // cast to 2D
         g2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         //blue background
@@ -67,7 +70,9 @@ class GCanvas extends Canvas // create a canvas for your graphics
         rainbow.draw(g2D, pixelSize);
         f++;
         if (f % 5 == 0) rainbow.toggleState();
+        //nyanCat.centerX += pixelSize;
         nyanCat.draw(g2D, pixelSize);
+        nyanCat.nextFrame();
     }
 }
 
@@ -101,7 +106,7 @@ class Renderer implements Runnable {
 
             // Some small delay...
             try {
-                Thread.sleep(120);
+                Thread.sleep(80);
             } catch (InterruptedException ex) {
                 ex.printStackTrace();
             }

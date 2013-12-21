@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="NyanCore">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../NyanCore/out/artifacts/NyanCore_jar/NyanCore.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
