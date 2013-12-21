@@ -51,11 +51,11 @@ public class Rainbow {
                     g.setColor(new Color(color.getRed(), color.getGreen(), color.getBlue(), (int) ((((float) (len - i + 4)) / len) * 255)));
                 }
 
-                Rectangle2D pixel = new Rectangle2D.Float(x, y, BLOCK_W * pixelSize, BLOCK_H * pixelSize);
+                Rectangle2D pixel = new Rectangle2D.Float(x, y, BLOCK_W * pixelSize * 2, BLOCK_H * pixelSize * 2);
                 g.fill(pixel);
-                y += BLOCK_H * pixelSize;
+                y += BLOCK_H * pixelSize * 2;
             }
-            x -= BLOCK_W * pixelSize;
+            x -= BLOCK_W * pixelSize * 2;
         }
     }
 }

@@ -27,6 +27,7 @@ class GCanvas extends Canvas // create a canvas for your graphics
 {
     private ArrayList<Star> stars;
     private Rainbow rainbow;
+    private NyanCat nyanCat;
 
     int f = 0;
 
@@ -49,6 +50,9 @@ class GCanvas extends Canvas // create a canvas for your graphics
         if (rainbow == null) {
             rainbow = new Rainbow(500, 500, 10);
         }
+        if (nyanCat == null) {
+            nyanCat = new NyanCat(200, 200, rainbow);
+        }
         Graphics2D g2D = (Graphics2D) g; // cast to 2D
         g2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         //blue background
@@ -63,6 +67,7 @@ class GCanvas extends Canvas // create a canvas for your graphics
         rainbow.draw(g2D, pixelSize);
         f++;
         if (f % 5 == 0) rainbow.toggleState();
+        nyanCat.draw(g2D, pixelSize);
     }
 }
 
