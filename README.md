@@ -1,2 +1,1 @@
-Nyan-Protocol-Demo
-==================
+Fun with cats...
